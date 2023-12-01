@@ -4,13 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
+    <style>
+        @font-face {
+            font-family:'Kanit';
+            src: url('./Kanit/Kanit-Regular.ttf');
+        }
+        body{
+            background-color: rgb(249, 169, 169);
+            font-family: 'Kanit';
+        }
+        #register{
+            color: blue;
+            font-size: 60px;
+            font-weight: 800;
+            background-color: aliceblue; 
+            border: solid blueviolet; 
+            text-align: center; 
+        }
+        .header-form{
+            font-weight: 800;
+        }
+        .gender{
+            display: flex;
+        }
+        .container{
+            display: flex;
+        }
+        .item-left{
+            background-color: red;
+            flex: 1;
+        }
+        .item-Right{
+            background-color: blue;
+            flex: 1;
+        }
+        /* margin คือ ขอบนอกสุด*/
+        /* Border คือ เป็นกรอบของข้อความเป็นส่วนที่อยู่ระหว่าง margin และ padding */
+        /* padding คือ ข้อความข้างในห่างถัด Border */
+    </style>
 </head>
 <body>
-    <h1>Register form</h1>
-    ชื่อจริง<input type="text">
-    นามสกุล<input type="text"> <br>
-    อายุ<input type="number" min="0" max="100">
-    <div>
+    <div class="container">
+        <div class="item-left">Left</div>
+        <div class="item-Right">Right</div>
+    </div>
+    <div id="register">Register form</div>
+    <span>ชื่อจริง</span>
+        <input class="form" type="text">
+    <span>นามสกุล</span>
+        <input class="form" type="text">
+    <span>อายุ</span>
+        <input class="form" type="number" min="0" max="100">
+    <div class="gender">
         เพศ
         <div>
             <input name="gender" type="radio">ชาย
