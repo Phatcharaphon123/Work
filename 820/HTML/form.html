@@ -10,37 +10,42 @@
             src: url('./Kanit/Kanit-Regular.ttf');
         }
         body{
-            background-color: rgb(249, 169, 169);
             font-family: 'Kanit';
         }
-        #register{
-            color: blue;
-            font-size: 60px;
-            font-weight: 800;
-            background-color: aliceblue; 
-            border: solid blueviolet; 
-            text-align: center; 
+        .container{
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgb(44, 253, 253);
+            border-radius: 20px;
+        }
+        .header{
+            font-size: 30px;
+            text-align: center;
         }
         .header-form{
-            font-weight: 800;
+            width: 200px;
         }
-        .gender{
+        .flex{
             display: flex;
         }
-        .container{
-            display: flex;
+        .form-input{
+            margin-bottom: 10px;
         }
-        .item-left{
-            background-color: red;
-            flex: 1;
+        input.form,textarea{
+            border: 1 px solid blue;
+            width: 100%;
         }
-        .item-Right{
-            background-color: blue;
-            flex: 1;
+        .center{
+            text-align: center;
         }
-        .grid-container{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+        .button{
+            border: 0;
+            width: 100%;
+            height: 40px;
+            background-color: rgb(47, 194, 47);
+            color: white;
+            border-radius: 20px;
         }
         /* margin คือ ขอบนอกสุด*/
         /* Border คือ เป็นกรอบของข้อความเป็นส่วนที่อยู่ระหว่าง margin และ padding */
@@ -49,35 +54,28 @@
 </head>
 <body>
     <div class="container">
-        <div class="item-left">Left</div>
-        <div class="item-Right">Right</div>
-    </div>
-    <div class="grid-container">
-        <div class="grid-item">item1</div>
-        <div class="grid-item">item2</div>
-        <div class="grid-item">item3</div>
-        <div class="grid-item">item4</div>
-    </div>
-    <div id="register">Register form</div>
-    <span>ชื่อจริง</span>
+        <div class="header">Register form</div>
+    <div class="flex form-input">
+        <div class="header-form">ชื่อจริง</div>
         <input class="form" type="text">
-    <span>นามสกุล</span>
+        </div>
+    <div class="flex form-input">
+        <div class="header-form">นามสกุล</div>
         <input class="form" type="text">
-    <span>อายุ</span>
+        </div>
+    <div class="flex form-input">
+        <div class="header-form">อายุ</div>
         <input class="form" type="number" min="0" max="100">
-    <div class="gender">
-        เพศ
+        </div>
+    <div class="flex gender form-input">
+        <div class="header-form">เพศ</div>
         <div>
             <input name="gender" type="radio">ชาย
-        </div>
-        <div>
             <input name="gender" type="radio">หญิง
-        </div>
-        <div>
             <input name="gender" type="radio">ไม่ระบุ
         </div>
     </div>
-<div>
+<div class="form-input">
     สิ่งที่สนใจ
     <div>
         <input name="interest" type="checkbox">หนังสือ
@@ -89,12 +87,15 @@
         <input name="interest" type="checkbox">การ์ตูน
     </div>
 </div>
-<div>
+<div form-input>
     คำอธิบายตัวตนเพิ่มเติม
     <div>
         <textarea></textarea>
     </div>
-    <button>ส่งข้อมูล</button>
+    <div class="center">
+        <button class="button">ส่งข้อมูล</button>
+    </div>
+</div>
 </div>
 </body>
 </html>
