@@ -15,6 +15,29 @@
             background-color: green;
             padding: 10px;
         }
+        .button{
+            background-color: rgb(0, 8, 255);
+            border: 0;
+            padding: 10px;
+        }
+        .button.active{
+            background-color: rgb(255, 0, 0);
+            border: 0;
+            padding: 10px;
+        }
+        .button.danger{
+            background-color: rgb(251, 255, 0);
+            border: 0;
+            padding: 10px;
+        }
+        .item1 + .item2{
+            background-color: lightgreen;
+        }
+        input[type="text"]{
+            border: 1;
+            height: 100px;
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -50,5 +73,16 @@
             </div>
         </div>
     </div>
+    <!-- 3. มี class ติดกัน -->
+    <button class="button">ปุ่ม</button>
+    <button class="button active">ปุ่ม</button>
+    <button class="button danger">ปุ่ม</button>
+    <!-- 4. เพื่อนกัน adjacent -->
+    <div class="item1">item1</div>
+    <div class="item2">item2</div>
+    <!-- 5. attribute selector -->
+    <input type="text" name="firstame">
+    <input type="text" name="lastname">
+    <input type="text" name="age">
 </body>
 </html>
