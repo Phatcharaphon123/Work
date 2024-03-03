@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Mar 02, 2024 at 04:20 AM
+-- Generation Time: Mar 02, 2024 at 06:08 PM
 -- Server version: 5.7.44
 -- PHP Version: 8.2.8
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `web_db`
+-- Database: `webdb`
 --
 
 -- --------------------------------------------------------
@@ -38,6 +38,17 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `age`, `gender`, `interests`, `description`) VALUES
+(1, 'aaa', 'aaa', 22, 'หญิง', 'aaa', 'aaa'),
+(3, 'bbb', 'bbb', 11, 'หญิง', 'bbb', 'bbb'),
+(4, 'bbb', 'bbb', 11, 'หญิง', 'bbb', 'bbb'),
+(5, 'bbb', 'bbb', 11, 'หญิง', 'bbb', 'bbb'),
+(6, 'bbb', 'bbb', 11, 'หญิง', 'bbb', 'bbb');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +66,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mysql = require('mysql2/promise');
 const app = express();
 
 app.use(bodyParser.json());
@@ -9,13 +10,21 @@ const port = 8000;
 let users = []
 let counter = 1;
 
-/*
-1.	GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
-2.	POST /users สำหรับการสร้าง users ใหม่บันทึกเข้าไป
-3.	GET /users/:id สำหรับการดึง users รายคนออกมา
-4.	PUT /users/:id สำหรับการแก้ไข users รายคน (ตาม id ที่บันทึกเข้าไป)
-5.	DELETE /users/:id สำหรับการลบ users รายคน (ตาม id ที่บันทึกเข้าไป)
-*/
+app.get('/testdb', (req, res) => {
+  mysql.createConnection({
+     host: 'localhost',
+     user: 'root',
+     password: 'root',
+     database: 'webdb',
+     port: 8820
+   }).then((conn) =>{
+     conn
+     .query('SELECT * FROM users')
+     .then((results) => {
+       res.json(results[0]);
+     })
+   })
+ })
 
  // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/users', (req, res) => {
