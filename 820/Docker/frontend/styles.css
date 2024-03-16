@@ -65,11 +65,13 @@ textarea {
 .message.success {
   background-color: green;
   display: block;
+  border-radius: 20px;
 }
 
 .message.danger {
   background-color: red;
   display: block;
+  border-radius: 20px;
 }
 
 

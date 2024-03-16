@@ -76,7 +76,7 @@ const submitData = async () => {
     let interestDOMs = document.querySelectorAll("input[name=interest]:checked") || {}
 
     let descriptionDOM = document.querySelector("textarea[name=description]")
-
+    
     let messageDOM = document.getElementById('message')
 
     try {
