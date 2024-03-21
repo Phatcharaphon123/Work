@@ -4,13 +4,11 @@
 //4. PUT /users/:id สำหรับการแก้ไข users รายคน (ตาม id ที่บันทึกเข้าไป)
 //5. DELETE /users/:id สำหรับการลบ users รายคน (ตาม id ที่บันทึกเข้าไป)
 
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
-
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -31,36 +29,12 @@ const initMYSQL = async () => {
   })
 }
 
-const validateData = (userData) => {
-  let errors = []
-  if (!userData.firstname) {
-    errors.push("กรุณากรอกชื่อ")
-  }
-  if (!userData.lastname) {
-    errors.push("กรุณากรอกนามสกุล")
-  }
-  if (!userData.age) {
-    errors.push("กรุณากรอกอายุ")
-  }
-  if (!userData.gender) {
-    errors.push("กรุณาเลือกเพศ")
-  }
-  if (!userData.interests) {
-    errors.push("กรุณาเลือกความสนใจ")
-  }
-  return errors
-}
-
-
-
 //path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 
 app.get('/users', async (req, res) => {
   const results = await conn.query('SELECT * FROM users');
   res.json(results[0]);
 })
-
-
 
 //path = post /user
 //2. POST /users สำหรับการสร้าง users ใหม่บันทึกเข้าไป
@@ -90,7 +64,6 @@ app.post('/users', async (req, res) => {
     })
   }
 })
-
 
 //path = GET /users/:id สำหรับการดึง users รายคนออกมา
 

@@ -1,188 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body{
-            align-items: center;
-            width: auto;
-            height: 120vh;
-            background: url('/frontend/image/img1.png') no-repeat; 
-            background-size: cover;
-            background-position:center;
-            margin: auto;
-            /* border: 2.5px solid rgb(255, 0, 0); */
-            
-        }
-        .Nav{
-            top: 0;
-            left: 0;
-            padding: 10px 100px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid white;
-            border-radius:10px;
-            align-items: center;
-            border-color: rgba(255, 255, 255, .2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-        }
-        .nav a{
-            color: #fff;
-            text-decoration: none;
-            margin-left: 30px;
-        }
-        .nav a:hover{
-        text-decoration: underline 2px solid #fff;
-        }
-        .container{
-            margin: 0 auto;
-            max-width: 57vw;
-            margin-top: 12vh;
-            /* border: 2.5px solid rgb(255, 0, 0); */
-        }
-        .container1{
-            margin: 0 auto;
-            max-width: 57vw;
-            /* border: 2.5px solid rgb(255, 0, 0); */
-        }
-
-        header {
-            border-radius: 15px;
-            background: transparent;
-            border: 2.5px solid rgba(255, 255, 255, .25);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        header input {
-            border: none;
-            border-radius: 10px;
-            padding: 0.5rem;
-            padding-left: 1rem;
-            width: 380px;
-            margin: 1rem 0;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        header button {
-            border: none;
-            border-radius: 10px;
-            padding: 0.5rem 1rem;
-            width: 150px;
-            font-size: 1rem;
-            margin-left: .7rem;
-            background-color: #d61139;
-            color: white;
-            transition: .4s ease-in-out;
-        }
-
-        header button:hover {
-            background-color: #ec4466;
-        }
-
-        header a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: .5s ease-in-out;
-            font-weight: bold;
-        }
-        header a:hover {
-            font-size: 2rem;
-        }
-
-        #user {
-            border-radius: 15px;
-            background: transparent;
-            border: 2.5px solid rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        #user div {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #user a button {
-            padding: 0.4rem 1rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            margin: 0 .5rem;
-            background-color: rgb(209, 136, 0);
-            color: white;
-            font-weight: bold;
-            transition: .5s ease;
-        }
-
-        #user a button:hover {
-            padding: .4rem 2rem;
-        }
-
-        #user .delete {
-            padding: .4rem 1rem;
-            font-size: 1rem;
-            border: none;
-            border-radius: 10px;
-            background-color: #d61139;
-            color: white;
-            font-weight: bold;
-            transition: .5s ease;
-        }
-
-        #user .delete:hover {
-            padding: .4rem 2rem;
-            background-color: #a70223;
-        }
-
-    </style>
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles_user.css">
 </head>
 <body>
     <div class="Nav">
-        <h1 style="color: rgb(137, 255, 255); text-decoration: none; font-size: large;">User management</h1>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to register</button>
         <nav class="nav">
           <a href="#" style="color: #fff;">Home</a>
           <a href="#" style="color: #fff;">About</a>
           <a href="#" style="color: #fff;">Service</a>
           <a href="#" style="color: #fff;">Contact</a>  
         </nav>
-      </div>
-    <div class="container">
-        <header>
-            <h1>Welcome to User management</h1>
-            <a href="index.html">Back to register 👈</a>
-        </header>
-            <div class="container1">
-                <div id="user"></div>
-            </div>
     </div>
-
+    <h2 style="color: #fff;">User management</h2>
+    <div id="user"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="user.js" charset="UTF-8"></script>
+    <script src="user.js"></script>
 </body>
-
 </html>
