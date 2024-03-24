@@ -21,9 +21,38 @@ const initMySQL = async () => {
   })
 }
 
+const validateData = (user) => {
+  let errors = []
+  if (!user.student_name) {
+    errors.push("กรุณากรอกชื่อ")
+  }
+  if (!user.student_age) {
+    errors.push("กรุณากรอกอายุ")
+  }
+  if (!user.student_address) {
+    errors.push("กรุณากรอกที่อยู่")
+  }
+  if (!user.study_grade) {
+    errors.push("กรุณากรอกเกรด")
+  }
+  if (!user.extra_learning_activities	) {
+    errors.push("กรุณากรอกกิจกรรมเสริมการเรียน")
+  }
+  if (!user.teacher_name) {
+    errors.push("กรุณากรอกชื่อครูผู้สอน")
+  }
+  if (!user.teaching_subject) {
+    errors.push("กรุณากรอกวิชาที่สอน")
+  }
+  if (!user.class_time) {
+    errors.push("กรุณากรอกเวลาเรียน")
+  }
+  return errors
+}
+
 // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/users', async (req, res) => {
-  const results = await conn.query('SELECT * FROM users')
+  const results = await conn.query('SELECT * FROM educational')
   res.json(results[0])
 })
 
@@ -31,14 +60,13 @@ app.get('/users', async (req, res) => {
 app.post('/users', async (req, res) => {
   try {
       let user = req.body
-
       const errors = validateData(user)
       if (errors.length > 0) {
         throw { 
           message: 'กรอกข้อมูลไม่ครบ',
           errors: errors }
       }
-      const results = await conn.query('INSERT INTO users SET ?', user)
+      const results = await conn.query('INSERT INTO educational SET ?', user)
       res.json({
         message: 'insert ok',
         data: results[0]
@@ -58,7 +86,7 @@ app.post('/users', async (req, res) => {
 app.get('/users/:id', async (req, res) => {
   try {
     let id = req.params.id
-    const results = await conn.query('SELECT * FROM users WHERE id = ?', id)
+    const results = await conn.query('SELECT * FROM educational WHERE id = ?', id)
 
     if (results[0].length == 0) {
       throw { statusCode: 404, message: 'หาไม่เจอ' }
@@ -81,7 +109,7 @@ app.put('/users/:id', async (req, res) => {
     let id = req.params.id
     let updateUser = req.body
     const results = await conn.query(
-      'UPDATE users SET ? WHERE id = ?',
+      'UPDATE educational SET ? WHERE id = ?',
       [updateUser, id]
     )
     res.json({
@@ -101,7 +129,7 @@ app.put('/users/:id', async (req, res) => {
 app.delete('/users/:id', async (req, res) => {
   try {
     let id = req.params.id
-    const results = await conn.query('DELETE from users WHERE id = ?', parseInt(id))
+    const results = await conn.query('DELETE from educational WHERE id = ?', parseInt(id))
     res.json({
       message: 'delete ok',
       data: results[0]
