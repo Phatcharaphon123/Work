@@ -35,11 +35,11 @@
     
     <h3>Study Information</h3>
     <div class="subject">Subject:</div>
-    <input type="text" class="subject" name="subject" required>
+    <input type="text" class="study_subject" name="study_subject" required>
     <div class="grade">Grade:</div>
-    <input type="text" class="grade" name="grade" required>
+    <input type="text" class="study_grade" name="study_grade" required>
     <div class="extra_activities">Extra Learning Activities:</div>
-    <input type="text" class="extra_activities" name="extra_activities" required>
+    <input type="text" class="extra_learning_activities" name="extra_learning_activities" required>
     
     <h3>Teaching Information</h3>
     <div class="teacher_name">Teacher Name:</div>
@@ -49,7 +49,12 @@
     <div class="class_time">Class Time:</div>
     <input type="text" id="class_time" name="class_time" required>
     
-    <input type="submit" value="Submit">
+    <div id="message" class="message"></div>
+
+    <button class="button" onclick="submitData()">Submit</button>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="information.js" charset="UTF-8"></script>
 </body>
 </html>

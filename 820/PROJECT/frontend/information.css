@@ -6,13 +6,10 @@
     margin: auto;
     width: auto;
     height: auto;
-    font-family: Arial, sans-serif;
-    background: url('/frontend/image/img2.jpg') no-repeat; 
+    font-family: "kanit", Arial, sans-serif; 
+    background: url('../frontend/image/img2.jpg') no-repeat; 
     align-items: center;
     background-size: cover;
-    background-position:center;
-    
-    /* border: 2px solid red; */
   }
   .Nav{
     margin: auto;
@@ -61,7 +58,7 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
-  input[type="submit"] {
+  button{
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -70,6 +67,26 @@
     cursor: pointer;
     float: right;
   }
-  input[type="submit"]:hover {
+  button:hover {
     background-color: #45a049;
+  }
+  .message {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    margin: 20px;
+    display: none;
+  }
+  
+  .message.success {
+    background-color: green;
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .message.danger {
+    background-color: red;
+    display: block;
+    border-radius: 20px;
   }

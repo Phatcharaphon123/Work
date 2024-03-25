@@ -21,30 +21,30 @@ const initMySQL = async () => {
   })
 }
 
-const validateData = (user) => {
+const validateData = (userData) => {
   let errors = []
-  if (!user.student_name) {
+  if (!userData.student_name) {
     errors.push("กรุณากรอกชื่อ")
   }
-  if (!user.student_age) {
+  if (!userData.student_age) {
     errors.push("กรุณากรอกอายุ")
   }
-  if (!user.student_address) {
+  if (!userData.student_address) {
     errors.push("กรุณากรอกที่อยู่")
   }
-  if (!user.study_grade) {
+  if (!userData.study_grade) {
     errors.push("กรุณากรอกเกรด")
   }
-  if (!user.extra_learning_activities	) {
+  if (!userData.extra_learning_activities	) {
     errors.push("กรุณากรอกกิจกรรมเสริมการเรียน")
   }
-  if (!user.teacher_name) {
+  if (!userData.teacher_name) {
     errors.push("กรุณากรอกชื่อครูผู้สอน")
   }
-  if (!user.teaching_subject) {
+  if (!userData.teaching_subject) {
     errors.push("กรุณากรอกวิชาที่สอน")
   }
-  if (!user.class_time) {
+  if (!userData.class_time) {
     errors.push("กรุณากรอกเวลาเรียน")
   }
   return errors
