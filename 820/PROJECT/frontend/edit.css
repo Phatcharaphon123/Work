@@ -13,6 +13,7 @@
     font-family: "kanit", Arial, sans-serif; 
     background: url('/frontend/image/img1.png') no-repeat; 
     /* border: 2px solid red; */
+
   }
   .Nav{
     margin: auto;
@@ -34,3 +35,101 @@
   .nav a:hover{
     text-decoration: underline 2px solid #fff;
   }
+  .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  #user {
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-radius:10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+
+    color: #fff;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: rgb(0, 0, 0);
+}
+
+.edit-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    font-family: "kanit", Arial, sans-serif; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: auto;
+}
+
+.edit-button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    font-family: "kanit", Arial, sans-serif; 
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+.back-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}

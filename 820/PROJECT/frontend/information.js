@@ -1,4 +1,3 @@
-
 const BASE_URL = 'http://localhost:8000';
 
 let mode = "CREATE"; // default mode
@@ -13,7 +12,7 @@ window.onload = async () => {
 
         try {
             const response = await axios.get(`${BASE_URL}/users/${id}`);
-            const userData = response.data;
+            const user = response.data;
 
             let student_nameDOM = document.querySelector("input[name=student_name]");
             let student_ageDOM = document.querySelector("input[name=student_age]");
@@ -25,18 +24,18 @@ window.onload = async () => {
             let teacher_nameDOM = document.querySelector("input[name=teacher_name]");
             let teaching_subjectDOM = document.querySelector("input[name=teaching_subject]");
             let class_timeDOM = document.querySelector("input[name=class_time]");
-            
-            student_name = student_nameDOM.value
-            student_age = student_ageDOM.value
-            student_address = student_addressDOM.value
-            education_level = education_levelDOM.value
-            study_subject = subjectDOM.value
-            study_grade = gradeDOM.value
-            extra_learning_activities = extra_learning_activitiesDOM.value
-            teacher_name = teacher_nameDOM.value
-            teaching_subject = teaching_subjectDOM.value
-            class_time = class_timeDOM.value
-            
+
+            student_nameDOM.value = user.student_name;
+            student_ageDOM.value = user.student_age;
+            student_addressDOM.value = user.student_address;
+            education_levelDOM.value = user.education_level;
+            study_subjectDOM.value = user.study_subject;
+            study_gradeDOM.value = user.study_grade;
+            extra_learning_activitiesDOM.value = user.extra_learning_activities;
+            teacher_nameDOM.value = user.teacher_name;
+            teaching_subjectDOM.value = user.teaching_subject;
+            class_timeDOM.value = user.class_time;
+
         } catch (error) {
             console.log("Error", error);
         }
@@ -55,7 +54,7 @@ const validateData = (userData) => {
         errors.push("กรุณากรอกที่อยู่");
     }
     if (!userData.education_level) {
-        errors.push("กรุณากรอกระดับการศึกษา");
+        errors.push("กรุณาเลือกระดับการศึกษา");
     }
     if (!userData.study_subject) {
         errors.push("กรุณากรอกวิชา");
@@ -89,7 +88,7 @@ const submitData = async () => {
     let teacher_nameDOM = document.querySelector("input[name=teacher_name]");
     let teaching_subjectDOM = document.querySelector("input[name=teaching_subject]");
     let class_timeDOM = document.querySelector("input[name=class_time]");
-    
+
     let messageDOM = document.getElementById('message');
 
     try {
@@ -105,7 +104,7 @@ const submitData = async () => {
             teaching_subject: teaching_subjectDOM.value,
             class_time: class_timeDOM.value
         }
-        console.log('submitdata', userData);
+
         const errors = validateData(userData);
         if (errors.length > 0) {
             throw {
@@ -113,8 +112,9 @@ const submitData = async () => {
                 errors: errors
             };
         }
-        
-        let message = "บันทึกข้อมูลเรียบร้อย";    
+
+        let message = "บันทึกข้อมูลเรียบร้อย";
+        let response;
         if (mode === "CREATE") {
             response = await axios.post(`${BASE_URL}/users`, userData);
             console.log('response', response.data);
@@ -130,11 +130,11 @@ const submitData = async () => {
         console.log('error message', error.message);
         console.log("error", error.errors);
 
-        if(error.response){
+        if (error.response) {
             console.log(error.response.data.message)
             error.message = error.response.data.message;
             error.errors = error.response.data.errors;
-        }      
+        }
 
         let htmlData = '<div>';
         htmlData += `<div>${error.message}</div>`;
