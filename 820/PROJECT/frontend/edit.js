@@ -25,7 +25,7 @@ const loadData = async () => {
                     <td>${student.study_subject}</td>
                     <td>${student.study_grade}</td>
                     <td>${student.teacher_name}</td>
-                    <td><a href='register.html?id=${student.id}' class='edit-button'>Edit</a></td>
+                    <td><a href='information.html?id=${student.id}' class='edit-button'>Edit</a></td>
                     <td><button class='delete-button' data-id='${student.id}'>Delete</button></td>
                     </tr>`
             }

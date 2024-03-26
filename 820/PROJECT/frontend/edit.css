@@ -36,22 +36,24 @@
     text-decoration: underline 2px solid #fff;
   }
   .container {
-    display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
   }
   #user {
     max-width: 90%;
+    margin: auto;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    margin-bottom: 20px;
     border-radius:10px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(3px);
     justify-content: center;
     text-align: center;
+    align-items: center;
 }
 
 a {
