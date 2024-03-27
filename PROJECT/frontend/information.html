@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Management System - Data Entry Form</title>
+  <link rel="stylesheet" href="information.css">
+</head>
+<body>
+  <div class="Nav">
+    <a href="Edit.html" style="color: rgb(137, 255, 255); text-decoration: none; font-size: large;">👉🏻Go to Student Edit 🛠</a>
+    <nav class="nav">
+      <a href="#" style="color: #fff;">Home</a>
+      <a href="#" style="color: #fff;">About</a>
+      <a href="#" style="color: #fff;">Service</a>
+      <a href="#" style="color: #fff;">Contact 📞</a>  
+    </nav>
+  </div>
+  <h2 style="color: #96ffff;">Education Management System 👨🏻‍🎓</h2>
+  <div class="container">
+    <h3>Student Information</h3>
+    <div class="student_name">Name :</div>
+    <input type="text" class="student_name" name="student_name" required>
+    <div class="student_age">Age:</div>
+    <input type="number" class="student_age" name="student_age" required>
+    <div class="student_address">Address :</div>
+    <input type="text" class="student_address" name="student_address" required>
+    <div class="education_level">Education Level :</div>
+    <select class="education_level" name="education_level" required>
+      <option value="">เลือกระดับการศึกษา</option>
+      <option value="ประถมศึกษา">ประถมศึกษา</option>
+      <option value="มัธยมศึกษา">มัธยมศึกษา</option>
+      <option value="มหาวิทยาลัย">มหาวิทยาลัย</option>
+    </select>
+    
+    <h3>Study Information</h3>
+    <div class="subject">Subject :</div>
+    <input type="text" class="study_subject" name="study_subject" required>
+    <div class="grade">Grade :</div>
+    <input type="text" class="study_grade" name="study_grade" required>
+    <div class="extra_activities">Extra Learning Activities :</div>
+    <input type="text" class="extra_learning_activities" name="extra_learning_activities" required>
+    
+    <h3>Teaching Information</h3>
+    <div class="teacher_name">Teacher Name :</div>
+    <input type="text" id="teacher_name" name="teacher_name" required>
+    <div class="teaching_subject">Teaching Subject :</div>
+    <input type="text" id="teaching_subject" name="teaching_subject" required>
+    <div class="class_time">Class Time :</div>
+    <input type="text" id="class_time" name="class_time" required>
+    
+    <div id="message" class="message"></div>
+
+    <button class="button" onclick="submitData()">Submit</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="information.js" charset="UTF-8"></script>
+</body>
+</html>

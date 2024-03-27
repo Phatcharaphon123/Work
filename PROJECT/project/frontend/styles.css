@@ -1,0 +1,141 @@
+/*REGISTER*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+h1 {
+  margin: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+button {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.back-button {
+  width: fit-content;
+  align-self: flex-start; 
+  margin-left: 860px; 
+  margin-top: 20px;
+}
+
+.message {
+  background-color: lightgray;
+  padding: 10px;
+  display: none;
+  color: #ddd;
+}
+
+.message.success {
+  background-color: lightgreen;
+  display: block;
+}
+
+.message.danger {
+  background-color: rgb(179, 41, 41);
+  display: block;
+}
+
+/*BILL*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+#user {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.edit-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  width: fit-content;
+  align-self: flex-start; 
+  margin-left: 10px; 
+  margin-top: 10px;
+  background-color: #d32f2f;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.back-button_2 {
+  width: fit-content;
+  align-self: flex-start; 
+  margin-left: 10px; 
+  margin-top: 20px;
+}
