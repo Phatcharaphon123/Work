@@ -14,7 +14,7 @@ const loadData = async () => {
 
         if (studentDOM) {
             let htmlData = '<table>';
-            htmlData += '<tr><th>ID</th><th>Student Name</th><th>Education Level</th><th>Study Subject</th><th>Study Grade</th><th>Teacher Name</th><th>Edit</th><th>Delete</th></tr>';
+            htmlData += '<tr><th>ID</th><th>Student Name</th><th>Age</th><th>Address</th><th>Education Level</th><th>Study Subject</th><th>Study Grade</th><th>Extra Learning Activities</th><th>Teacher Name</th><th>Edit</th><th>Delete</th></tr>';
 
             let rowId = 1; // ตัวแปรนับแถว
 
@@ -23,9 +23,12 @@ const loadData = async () => {
                 htmlData += `<tr>
                     <td>${rowId}</td> <!-- เปลี่ยน student.id เป็น rowId -->
                     <td>${student.student_name}</td>
+                    <td>${student.student_age}</td>
+                    <td>${student.student_address}</td>
                     <td>${student.education_level}</td>
                     <td>${student.study_subject}</td>
                     <td>${student.study_grade}</td>
+                    <td>${student.extra_learning_activities}</td>
                     <td>${student.teacher_name}</td>
                     <td><a href='information.html?id=${student.id}' class='edit-button'>Edit</a></td>
                     <td><button class='delete-button' data-id='${student.id}'>Delete</button></td>
