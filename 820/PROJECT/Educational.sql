@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Mar 24, 2024 at 12:34 PM
+-- Generation Time: Mar 27, 2024 at 05:22 AM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.8
 
@@ -34,7 +34,7 @@ CREATE TABLE `Educational` (
   `student_address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'ที่อยู่นักศึกษา',
   `education_level` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'ระดับการศึกษา',
   `study_subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'วิชา',
-  `study_grade:` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'เกรด',
+  `study_grade` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'เกรด',
   `extra_learning_activities` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'กิจกรรมเสริมการเรียน',
   `teacher_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'ชื่ออาจารย์',
   `teaching_subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'วิชาที่สอน',
@@ -45,9 +45,12 @@ CREATE TABLE `Educational` (
 -- Dumping data for table `Educational`
 --
 
-INSERT INTO `Educational` (`id`, `student_name`, `student_age`, `student_address`, `education_level`, `study_subject`, `study_grade:`, `extra_learning_activities`, `teacher_name`, `teaching_subject`, `class_time`) VALUES
-(1, 'พัชรพล ยอดราช', 20, 'นนทบุรี', 'มหาวิทยาลัย', 'เทคโนโลยีอินเทอร์เน็ต', 'A+', 'เชื่อมต่อเซอเวอร์', 'สุริยะ', 'เทคโนโลยีอินเทอร์เน็ต', 'วันศุกร์9:00 น.-13:00น.'),
-(2, 'พัชรพล เทพซ่า', 35, 'นครปฐม', 'มัธยมศึกษา', 'ฐานข้อมูล', 'ฺิB+', 'เขียนโค้ต SQL', 'ดีเลิศ', 'ฐานข้อมูล', 'จันทร์16:00น.-18:00น.\r\nพฤหัสบดี15:00น.-16:00น.');
+INSERT INTO `Educational` (`id`, `student_name`, `student_age`, `student_address`, `education_level`, `study_subject`, `study_grade`, `extra_learning_activities`, `teacher_name`, `teaching_subject`, `class_time`) VALUES
+(21, 'สมชาย', 35, 'นครปฐม', 'มหาวิทยาลัย', 'database', 'A+', 'เขียน sql', 'สมหญิง', 'database', 'จันทร์16:00น.-18:00น.\r\nพฤหัสบดี15:00น.-16:00น.'),
+(22, 'พัชรพล', 20, 'นนทบุรี', 'มัธยมศึกษา', 'internet', 'A', 'เขียนเว็บ+เซอเวอร์', 'สุริยะ', 'internet', 'ศุกร์9:00น.-13:00น.'),
+(23, 'จัสติน', 36, 'ตรัง', 'มัธยมศึกษา', 'ท่องก.-ฮ.', 'A', 'ท่องศัพท์', 'สมปอง', 'ท่องก.-ฮ.', 'พุธ12:00น.-15.00น.'),
+(33, 'สีดา', 19, 'เชียงใหม่', 'มัธยมศึกษา', 'แคลคูลัส', 'C+', 'บวกเลขตึงๆ', 'โจเซฟ', 'แคลคูลัส', 'อังคาร14:00น.-15:00น.'),
+(34, 'สมหมาย', 21, 'เชียงราย', 'มัธยมศึกษา', 'network', 'A', 'ต่อสายLAN', 'สมศัก', 'network', 'พุธ9:00น.-12:00น.');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +70,7 @@ ALTER TABLE `Educational`
 -- AUTO_INCREMENT for table `Educational`
 --
 ALTER TABLE `Educational`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
