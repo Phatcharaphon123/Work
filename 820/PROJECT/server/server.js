@@ -109,7 +109,7 @@ app.put('/users/:id', async (req, res) => {
     let id = req.params.id
     let updateUser = req.body
     const results = await conn.query(
-      'UPDATE educational SET ? WHERE id = ?',
+      'UPDATE Educational SET ? WHERE id = ?',
       [updateUser, id]
     )
     res.json({
