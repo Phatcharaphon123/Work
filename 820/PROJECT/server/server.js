@@ -52,7 +52,7 @@ const validateData = (userData) => {
 
 // path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/users', async (req, res) => {
-  const results = await conn.query('SELECT * FROM educational')
+  const results = await conn.query('SELECT * FROM Educational')
   res.json(results[0])
 })
 
@@ -66,7 +66,7 @@ app.post('/users', async (req, res) => {
           message: 'กรอกข้อมูลไม่ครบ',
           errors: errors }
       }
-      const results = await conn.query('INSERT INTO educational SET ?', user)
+      const results = await conn.query('INSERT INTO Educational SET ?', user)
       res.json({
         message: 'insert ok',
         data: results[0]
@@ -86,7 +86,7 @@ app.post('/users', async (req, res) => {
 app.get('/users/:id', async (req, res) => {
   try {
     let id = req.params.id
-    const results = await conn.query('SELECT * FROM educational WHERE id = ?', id)
+    const results = await conn.query('SELECT * FROM Educational WHERE id = ?', id)
 
     if (results[0].length == 0) {
       throw { statusCode: 404, message: 'หาไม่เจอ' }
@@ -129,7 +129,7 @@ app.put('/users/:id', async (req, res) => {
 app.delete('/users/:id', async (req, res) => {
   try {
     let id = req.params.id
-    const results = await conn.query('DELETE from educational WHERE id = ?', parseInt(id))
+    const results = await conn.query('DELETE from Educational WHERE id = ?', parseInt(id))
     res.json({
       message: 'delete ok',
       data: results[0]
