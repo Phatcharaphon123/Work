@@ -3,17 +3,12 @@
     src: url('./Kanit/Kanit-Regular.ttf');
   }
   body {
-    margin: auto;
-    width: auto;
-    height: auto;
-    font-family: Arial, sans-serif;
-    align-items: center;
-    background-size: cover;
-    background-position:center;
-    font-family: "kanit", Arial, sans-serif; 
-    background: url('/frontend/image/img1.png') no-repeat; 
-    /* border: 2px solid red; */
-
+    margin: 0;
+    font-family: "kanit", Arial, sans-serif;
+    background: url('/frontend/image/img1.png') no-repeat;
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
   }
   .Nav{
     margin: auto;
