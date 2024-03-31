@@ -5,7 +5,7 @@
   body {
     margin: 0;
     font-family: "kanit", Arial, sans-serif;
-    background: url('/frontend/image/img1.png') no-repeat;
+    background: url('/frontend/image/img4.png') no-repeat ;
     background-size: cover; 
     background-position: center;
     background-attachment: fixed;
@@ -31,11 +31,20 @@
     text-decoration: underline 2px solid #fff;
   }
   .container {
-    justify-content: center; 
-    align-items: center;
+    max-width: 95%;
+    margin: auto;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: purple;
+    border-radius:10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   #user {
-    max-width: 95%;
     margin: auto;
     padding: 20px;
     border-radius: 5px;
@@ -61,21 +70,32 @@ a:hover {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "kanit", Arial, sans-serif;
 }
 
 th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 2px solid #ddd;
-
-    color: #fff;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
 }
 
 th {
-    background-color: #f2f2f2;
-    color: rgb(0, 0, 0);
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+td {
+  background-color: #fff; 
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+tr:hover {
+  background-color: #ddd; 
 }
 
 .edit-button {
@@ -83,7 +103,7 @@ th {
     border: none;
     color: white;
     font-family: "kanit", Arial, sans-serif; 
-    padding: 10px 20px;
+    padding: 10px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -93,9 +113,9 @@ th {
     border-radius: 5px;
     margin-right: auto;
 }
-
 .edit-button:hover {
     background-color: #45a049;
+    text-decoration: underline 2px solid #fff;
 }
 
 .delete-button {
@@ -115,18 +135,5 @@ th {
 
 .delete-button:hover {
     background-color: #d32f2f;
-}
-
-.back-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
+    text-decoration: underline 2px solid #fff;
 }

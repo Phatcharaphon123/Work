@@ -7,10 +7,10 @@ window.onload = async () => {
 const loadData = async () => {
     console.log('loaded');
     try {
-        const response = await axios.get(`${BASE_URL}/users`);
+        const response = await axios.get(`${BASE_URL}/students`);
         console.log(response.data);
 
-        const studentDOM = document.getElementById('user');
+        const studentDOM = document.getElementById('student');
 
         if (studentDOM) {
             let htmlData = '<table>';
@@ -44,7 +44,7 @@ const loadData = async () => {
                 deleteDOMs[i].addEventListener('click', async (event) => {
                     const id = event.target.dataset.id;
                     try {
-                        await axios.delete(`${BASE_URL}/users/${id}`);
+                        await axios.delete(`${BASE_URL}/students/${id}`);
                         loadData();
                     } catch (error) {
                         console.log(error);

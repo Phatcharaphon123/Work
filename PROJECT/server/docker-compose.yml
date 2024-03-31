@@ -13,7 +13,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
-      - weblab820
+      - Student
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -28,10 +28,10 @@ services:
     depends_on:
       - db
     networks:
-      - weblab820
+      - Student
 
 networks:
-  weblab820:
+  Student:
     driver: bridge
 
 volumes:

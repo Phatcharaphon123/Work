@@ -21,58 +21,59 @@ const initMySQL = async () => {
   })
 }
 
-const validateData = (userData) => {
+const validateData = (studentData) => {
   let errors = []
-  if (!userData.student_name) {
+  if (!studentData.student_name) {
     errors.push("กรุณากรอกชื่อ")
   }
-  if (!userData.student_age) {
+  if (!studentData.student_age) {
     errors.push("กรุณากรอกอายุ")
   }
-  if (!userData.student_address) {
+  if (!studentData.student_address) {
     errors.push("กรุณากรอกที่อยู่")
   }
-  if (!userData.education_level) {
+  if (!studentData.education_level) {
     errors.push("กรุณากรอกระดับการศึกษา")
   }
-  if (!userData.study_subject) {
+  if (!studentData.study_subject) {
     errors.push("กรุณากรอกวิชา")
   }
-  if (!userData.study_grade) {
+  if (!studentData.study_grade) {
     errors.push("กรุณากรอกเกรด")
   }
-  if (!userData.extra_learning_activities	) {
+  if (!studentData.extra_learning_activities	) {
     errors.push("กรุณากรอกกิจกรรมเสริมการเรียน")
   }
-  if (!userData.teacher_name) {
+  if (!studentData.teacher_name) {
     errors.push("กรุณากรอกชื่อครูผู้สอน")
   }
-  if (!userData.teaching_subject) {
+  if (!studentData.teaching_subject) {
     errors.push("กรุณากรอกวิชาที่สอน")
   }
-  if (!userData.class_time) {
+  if (!studentData.class_time) {
     errors.push("กรุณากรอกเวลาเรียน")
   }
   return errors
 }
 
-// path = GET /users สำหรับ get users ทั้งหมดที่บันทึกเข้าไปออกมา
-app.get('/users', async (req, res) => {
+
+// path = GET /students สำหรับ get students ทั้งหมดที่บันทึกเข้าไปออกมา
+app.get('/students', async (req, res) => {
   const results = await conn.query('SELECT * FROM Educational')
   res.json(results[0])
 })
 
-// path = POST /users สำหรับการสร้าง users ใหม่บันทึกเข้าไป
-app.post('/users', async (req, res) => {
+// path = POST /students สำหรับการสร้าง students ใหม่บันทึกเข้าไป
+app.post('/students', async (req, res) => {
   try {
-      let user = req.body
-      const errors = validateData(user)
+      let student = req.body
+      const errors = validateData(student)
       if (errors.length > 0) {
         throw { 
           message: 'กรอกข้อมูลไม่ครบ',
           errors: errors }
       }
-      const results = await conn.query('INSERT INTO Educational SET ?', user)
+      const results = await conn.query('INSERT INTO Educational SET ?', student)
       res.json({
         message: 'insert ok',
         data: results[0]
@@ -88,8 +89,8 @@ app.post('/users', async (req, res) => {
   }
 })
 
-// GET /users/:id สำหรับการดึง users รายคนออกมา
-app.get('/users/:id', async (req, res) => {
+// GET /students/:id สำหรับการดึง students รายคนออกมา
+app.get('/students/:id', async (req, res) => {
   try {
     let id = req.params.id
     const results = await conn.query('SELECT * FROM Educational WHERE id = ?', id)
@@ -109,14 +110,14 @@ app.get('/users/:id', async (req, res) => {
   }
 })
 
-// path = PUT /users/:id สำหรับการแก้ไข users รายคน (ตาม id ที่บันทึกเข้าไป)
-app.put('/users/:id', async (req, res) => {
+// path = PUT /students/:id สำหรับการแก้ไข students รายคน (ตาม id ที่บันทึกเข้าไป)
+app.put('/students/:id', async (req, res) => {
   try {
     let id = req.params.id
-    let updateUser = req.body
+    let updateStudent = req.body
     const results = await conn.query(
       'UPDATE Educational SET ? WHERE id = ?',
-      [updateUser, id]
+      [updateStudent, id]
     )
     res.json({
       message: 'update ok',
@@ -132,7 +133,7 @@ app.put('/users/:id', async (req, res) => {
 
 
 // path DELETE /users/:id สำหรับการลบ users รายคน (ตาม id ที่บันทึกเข้าไป)
-app.delete('/users/:id', async (req, res) => {
+app.delete('/students/:id', async (req, res) => {
   try {
     let id = req.params.id
     const results = await conn.query('DELETE from Educational WHERE id = ?', parseInt(id))
