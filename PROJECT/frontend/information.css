@@ -1,89 +1,113 @@
-  @font-face {
-    font-family: "kanit";
-    src: url('./Kanit/Kanit-Regular.ttf');
-  }
-  body {
-    margin: 0;
-    font-family: "kanit", Arial, sans-serif;
-    background: url('/frontend/image/img3.jpg_large') no-repeat;
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed;
-  }
-  .Nav{
-    margin: auto;
-    padding: 10px 100px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid white;
-    border-radius:10px;
-    align-items: center;
-    border-color: rgba(255, 255, 255, .2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* border: 2px solid red; */
-  }
-  .nav a{
-    color: #fff;
-    text-decoration: none;
-    margin-left: 30px;
-  }
-  .nav a:hover{
-    text-decoration: underline 2px solid #fff;
-  }
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 5vh;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: purple;
-    color: #000000;
-    border-radius:10px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  h2 {
-    text-align: center;
-  }
-  input[type="text"],
-  input[type="number"],
-  select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  button{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }
-  button:hover {
-    background-color: #45a049;
-  }
-  .message {
-    background-color: gray;
-    color: white;
-    padding: 10px;
-    margin: 20px;
-    display: none;
-  }
-  .message.success {
-    background-color: green;
-    display: block;
-    border-radius: 20px;
-    text-align: center;
-  }
-  .message.danger {
-    background-color: red;
-    display: block;
-    border-radius: 20px;
-  }
+/* กำหนด font-face สำหรับฟอนต์ Kanit */
+@font-face {
+  font-family: "kanit";
+  src: url('./Kanit/Kanit-Regular.ttf');
+}
+
+/* กำหนดสไตล์ของ body */
+body {
+  margin: 0;
+  font-family: "kanit", Arial, sans-serif;
+  background: url('/frontend/image/img3.jpg_large') no-repeat;
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* กำหนดสไตล์ของเมนู Navigation */
+.Nav {
+  margin: auto;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid white;
+  border-radius: 10px;
+  align-items: center;
+  border-color: rgba(255, 255, 255, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* กำหนดสไตล์ของลิงก์ในเมนู Navigation */
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+/* กำหนดสไตล์ของลิงก์ในเมนู Navigation เมื่อโฮเวอร์ */
+.nav a:hover {
+  text-decoration: underline 2px solid #fff;
+}
+
+/* กำหนดสไตล์ของ container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: purple;
+  color: #000000;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* กำหนดสไตล์ของหัวข้อ h2 */
+h2 {
+  text-align: center;
+}
+
+/* กำหนดสไตล์ของ input และ select */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* กำหนดสไตล์ของปุ่ม button */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* กำหนดสไตล์ของปุ่ม button เมื่อโฮเวอร์ */
+button:hover {
+  background-color: #45a049;
+}
+
+/* กำหนดสไตล์ของข้อความแจ้งเตือน */
+.message {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  display: none;
+}
+
+/* กำหนดสไตล์ของข้อความแจ้งเตือนเมื่อเป็นสำเร็จ */
+.message.success {
+  background-color: green;
+  display: block;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* กำหนดสไตล์ของข้อความแจ้งเตือนเมื่อไม่สำเร็จ */
+.message.danger {
+  background-color: red;
+  display: block;
+  border-radius: 20px;
+}

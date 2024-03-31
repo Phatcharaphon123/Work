@@ -1,74 +1,89 @@
+/* กำหนด font-face สำหรับฟอนต์ Kanit */
 @font-face {
-    font-family: "kanit";
-    src: url('./Kanit/Kanit-Regular.ttf');
-  }
-  body {
-    margin: 0;
-    font-family: "kanit", Arial, sans-serif;
-    background: url('/frontend/image/img4.png') no-repeat ;
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed;
-  }
-  .Nav{
-    margin: auto;
-    padding: 10px 100px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid white;
-    border-radius:10px;
-    align-items: center;
-    border-color: rgba(255, 255, 255, .2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* border: 2px solid red; */
-  }
-  .nav a{
-    color: #fff;
-    text-decoration: none;
-    margin-left: 30px;
-  }
-  .nav a:hover{
-    text-decoration: underline 2px solid #fff;
-  }
-  .container {
-    max-width: 95%;
-    margin: auto;
-    margin-bottom: 2vh;
-    margin-top: 2vh;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: purple;
-    border-radius:10px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  #user {
-    margin: auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius:10px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(3px);
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  font-family: "kanit";
+  src: url('./Kanit/Kanit-Regular.ttf');
 }
 
+/* กำหนดสไตล์ของ body */
+body {
+  margin: 0;
+  font-family: "kanit", Arial, sans-serif;
+  background: url('/frontend/image/img4.png') no-repeat;
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* กำหนดสไตล์ของเมนู Navigation */
+.Nav {
+  margin: auto;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid white;
+  border-radius: 10px;
+  align-items: center;
+  border-color: rgba(255, 255, 255, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* กำหนดสไตล์ของลิงก์ในเมนู Navigation */
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+/* กำหนดสไตล์ของลิงก์ในเมนู Navigation เมื่อโฮเวอร์ */
+.nav a:hover {
+  text-decoration: underline 2px solid #fff;
+}
+
+/* กำหนดสไตล์ของ container */
+.container {
+  max-width: 95%;
+  margin: auto;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: purple;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* กำหนดสไตล์ของข้อมูลผู้ใช้ */
+#user {
+  margin: auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+/* กำหนดสไตล์ของลิงก์ */
 a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 
+/* กำหนดสไตล์ของลิงก์เมื่อโฮเวอร์ */
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+/* กำหนดสไตล์ของตาราง */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -98,42 +113,47 @@ tr:hover {
   background-color: #ddd; 
 }
 
+/* กำหนดสไตล์ของปุ่มแก้ไข */
 .edit-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    font-family: "kanit", Arial, sans-serif; 
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: auto;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-family: "kanit", Arial, sans-serif; 
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: auto;
 }
+
+/* กำหนดสไตล์ของปุ่มแก้ไขเมื่อชี้เมาส์ค้างไว้ */
 .edit-button:hover {
-    background-color: #45a049;
-    text-decoration: underline 2px solid #fff;
+  background-color: #45a049;
+  text-decoration: underline 2px solid #fff;
 }
 
+/* กำหนดสไตล์ของปุ่มลบ */
 .delete-button {
-    background-color: #f44336; /* Red */
-    border: none;
-    color: white;
-    font-family: "kanit", Arial, sans-serif; 
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #f44336;
+  border: none;
+  color: white;
+  font-family: "kanit", Arial, sans-serif; 
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
+/* กำหนดสไตล์ของปุ่มลบเมื่อชี้เมาส์ค้างไว้ */
 .delete-button:hover {
-    background-color: #d32f2f;
-    text-decoration: underline 2px solid #fff;
+  background-color: #d32f2f;
+  text-decoration: underline 2px solid #fff;
 }

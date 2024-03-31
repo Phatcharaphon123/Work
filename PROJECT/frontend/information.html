@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Education Management System - Data Entry Form</title>
-  <link rel="stylesheet" href="information.css">
+  <link rel="stylesheet" href="information.css"> <!-- เชื่อมโยงไฟล์ CSS -->
 </head>
 <body>
   <div class="Nav">
+    <!-- Navbar -->
     <a href="Edit.html" style="color: rgb(255, 255, 255); text-decoration: none; font-size: large;">👉🏻Go to Student Edit 🛠</a>
     <nav class="nav">
+      <!-- เมนู -->
       <a href="#" style="color: #fff;">Home</a>
       <a href="#" style="color: #fff;">About</a>
       <a href="#" style="color: #fff;">Service</a>
@@ -18,14 +20,15 @@
   </div>
   <h2 style="color: #000000;">Education Information👨🏻‍🎓</h2>
   <div class="container">
+    <!-- ส่วนข้อมูลของนักเรียน -->
     <h3>Student Information</h3>
-    <div class="student_name">Name :</div>
+    <div class="student_name">Name :</div> <!-- ชื่อ -->
     <input type="text" class="student_name" name="student_name" required>
-    <div class="student_age">Age:</div>
+    <div class="student_age">Age:</div> <!-- อายุ -->
     <input type="number" class="student_age" name="student_age" required>
-    <div class="student_address">Address :</div>
+    <div class="student_address">Address :</div> <!-- ที่อยู่ -->
     <input type="text" class="student_address" name="student_address" required>
-    <div class="education_level">Education Level :</div>
+    <div class="education_level">Education Level :</div> <!-- ระดับการศึกษา -->
     <select class="education_level" name="education_level" required>
       <option value="">เลือกระดับการศึกษา</option>
       <option value="ประถมศึกษา">ประถมศึกษา</option>
@@ -33,28 +36,30 @@
       <option value="มหาวิทยาลัย">มหาวิทยาลัย</option>
     </select>
     
+    <!-- ส่วนข้อมูลการเรียน -->
     <h3>Study Information</h3>
-    <div class="subject">Subject :</div>
+    <div class="subject">Subject :</div> <!-- วิชา -->
     <input type="text" class="study_subject" name="study_subject" required>
-    <div class="grade">Grade :</div>
+    <div class="grade">Grade :</div> <!-- เกรด -->
     <input type="text" class="study_grade" name="study_grade" required>
-    <div class="extra_activities">Extra Learning Activities :</div>
+    <div class="extra_activities">Extra Learning Activities :</div> <!-- กิจกรรมเสริมการเรียน -->
     <input type="text" class="extra_learning_activities" name="extra_learning_activities" required>
     
+    <!-- ส่วนข้อมูลการสอน -->
     <h3>Teaching Information</h3>
-    <div class="teacher_name">Teacher Name :</div>
+    <div class="teacher_name">Teacher Name :</div> <!-- ชื่อครูผู้สอน -->
     <input type="text" id="teacher_name" name="teacher_name" required>
-    <div class="teaching_subject">Teaching Subject :</div>
+    <div class="teaching_subject">Teaching Subject :</div> <!-- วิชาที่สอน -->
     <input type="text" id="teaching_subject" name="teaching_subject" required>
-    <div class="class_time">Class Time :</div>
+    <div class="class_time">Class Time :</div> <!-- เวลาเรียน -->
     <input type="text" id="class_time" name="class_time" required>
     
-    <div id="message" class="message"></div>
+    <div id="message" class="message"></div> <!-- ข้อความแจ้งเตือน -->
 
-    <button class="button" onclick="submitData()">Submit</button>
+    <button class="button" onclick="submitData()">Submit</button> <!-- ปุ่มสำหรับส่งข้อมูล -->
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="information.js" charset="UTF-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript ของ Axios -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- เชื่อมโยงไฟล์ JavaScript ของ jQuery -->
+  <script src="information.js" charset="UTF-8"></script> <!-- เชื่อมโยงไฟล์ JavaScript ที่มีการจัดการเหตุการณ์ -->
 </body>
-</html>
+</html

@@ -1,20 +1,20 @@
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'http://localhost:8000'; // URL ของเซิร์ฟเวอร์ที่ใช้ในการโหลดข้อมูล
 
 window.onload = async () => {
-    await loadData();
+    await loadData(); // เมื่อหน้าเว็บโหลดเสร็จ ให้โหลดข้อมูล
 }
 
 const loadData = async () => {
     console.log('loaded');
     try {
-        const response = await axios.get(`${BASE_URL}/students`);
-        console.log(response.data);
+        const response = await axios.get(`${BASE_URL}/students`); // โหลดข้อมูลนักเรียนจากเซิร์ฟเวอร์
+        console.log(response.data); // แสดงข้อมูลที่ได้รับ
 
-        const studentDOM = document.getElementById('student');
+        const studentDOM = document.getElementById('student'); // หา DOM element ที่ใช้แสดงข้อมูลนักเรียน
 
         if (studentDOM) {
-            let htmlData = '<table>';
-            htmlData += '<tr><th>ID</th><th>Student Name</th><th>Age</th><th>Address</th><th>Education Level</th><th>Study Subject</th><th>Study Grade</th><th>Extra Learning Activities</th><th>Teacher Name</th><th>Edit</th><th>Delete</th></tr>';
+            let htmlData = '<table>'; // เริ่มตาราง HTML
+            htmlData += '<tr><th>ID</th><th>Student Name</th><th>Age</th><th>Address</th><th>Education Level</th><th>Study Subject</th><th>Study Grade</th><th>Extra Learning Activities</th><th>Teacher Name</th><th>Edit</th><th>Delete</th></tr>'; // ส่วนหัวของตาราง
 
             let rowId = 1; // ตัวแปรนับแถว
 
@@ -36,25 +36,25 @@ const loadData = async () => {
                 rowId++; // เพิ่มค่านับแถว
             }
 
-            htmlData += '</table>';
-            studentDOM.innerHTML = htmlData;
+            htmlData += '</table>'; // ปิดตาราง HTML
+            studentDOM.innerHTML = htmlData; // แทรก HTML ลงใน DOM element
 
-            const deleteDOMs = document.getElementsByClassName('delete-button');
+            const deleteDOMs = document.getElementsByClassName('delete-button'); // หา DOM elements ที่ใช้สำหรับลบข้อมูล
             for (let i = 0; i < deleteDOMs.length; i++) {
-                deleteDOMs[i].addEventListener('click', async (event) => {
-                    const id = event.target.dataset.id;
+                deleteDOMs[i].addEventListener('click', async (event) => { // เมื่อคลิกที่ปุ่มลบ
+                    const id = event.target.dataset.id; // ดึงข้อมูล ID ของนักเรียนที่ต้องการลบ
                     try {
-                        await axios.delete(`${BASE_URL}/students/${id}`);
-                        loadData();
+                        await axios.delete(`${BASE_URL}/students/${id}`); // ส่งคำขอลบข้อมูลไปยังเซิร์ฟเวอร์
+                        loadData(); // โหลดข้อมูลใหม่
                     } catch (error) {
-                        console.log(error);
+                        console.log(error); // แสดงข้อผิดพลาดที่เกิดขึ้น
                     }
                 });
             }
         } else {
-            console.log('studentDOM is null or not found');
+            console.log('studentDOM is null or not found'); // ถ้าไม่พบ DOM element ที่ใช้แสดงข้อมูล
         }
     } catch (error) {
-        console.log(error);
+        console.log(error); // แสดงข้อผิดพลาด
     }
 }

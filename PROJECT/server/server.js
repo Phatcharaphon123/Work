@@ -4,13 +4,14 @@ const mysql = require('mysql2/promise')
 const cors = require('cors')
 const app = express()
 
-app.use(bodyparser.json())
-app.use(cors())
+app.use(bodyparser.json()) // เรียกใช้ middleware body-parser เพื่อแปลงข้อมูล JSON ที่รับเข้ามา
+app.use(cors()) // เรียกใช้ middleware cors เพื่ออนุญาตการแชร์ข้อมูลระหว่างโดเมนต่าง
 
-const port = 8000
+const port = 8000 // กำหนดพอร์ตที่เซิร์ฟเวอร์จะทำงาน
 
 let conn = null
 
+// ฟังก์ชันเพื่อเชื่อมต่อกับ MySQL
 const initMySQL = async () => {
   conn = await mysql.createConnection({
     host: 'localhost',
@@ -21,6 +22,9 @@ const initMySQL = async () => {
   })
 }
 
+// ฟังก์ชันสำหรับตรวจสอบความถูกต้องของข้อมูลนักเรียน
+// ตรวจสอบข้อมูลแต่ละส่วนว่ามีค่าว่างหรือไม่ และเพิ่มข้อผิดพลาดใน errors array ตามเงื่อนไข
+// ส่งคืน errors array  
 const validateData = (studentData) => {
   let errors = []
   if (!studentData.student_name) {
@@ -60,6 +64,7 @@ const validateData = (studentData) => {
 // path = GET /students สำหรับ get students ทั้งหมดที่บันทึกเข้าไปออกมา
 app.get('/students', async (req, res) => {
   const results = await conn.query('SELECT * FROM Educational')
+  // ดึงข้อมูลนักเรียนทั้งหมดจากฐานข้อมูลและส่งกลับเป็น JSON response
   res.json(results[0])
 })
 
@@ -132,7 +137,7 @@ app.put('/students/:id', async (req, res) => {
 })
 
 
-// path DELETE /users/:id สำหรับการลบ users รายคน (ตาม id ที่บันทึกเข้าไป)
+// path DELETE /students/:id สำหรับการลบ users รายคน (ตาม id ที่บันทึกเข้าไป)
 app.delete('/students/:id', async (req, res) => {
   try {
     let id = req.params.id
