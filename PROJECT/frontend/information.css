@@ -4,17 +4,17 @@
   src: url('./Kanit/Kanit-Regular.ttf');
 }
 
-/* กำหนดสไตล์ของ body */
+/* สไตล์ของ body */
 body {
   margin: 0;
   font-family: "kanit", Arial, sans-serif;
-  background: url('/frontend/image/img3.jpg_large') no-repeat;
+  background-image: linear-gradient(rgba(235, 91, 91, 0.5), rgba(44, 4, 117, 0.5)), url('/frontend/image/img3.jpg_large');
   background-size: cover; 
   background-position: center;
   background-attachment: fixed;
 }
 
-/* กำหนดสไตล์ของเมนู Navigation */
+/* สไตล์ของเมนู Navigation */
 .Nav {
   margin: auto;
   padding: 10px 100px;
@@ -27,19 +27,19 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* กำหนดสไตล์ของลิงก์ในเมนู Navigation */
+/* ลิงก์ในเมนู Navigation */
 .nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 30px;
 }
 
-/* กำหนดสไตล์ของลิงก์ในเมนู Navigation เมื่อโฮเวอร์ */
+/* กำหนด font-face สำหรับฟอนต์ Kanit */
 .nav a:hover {
   text-decoration: underline 2px solid #fff;
 }
 
-/* กำหนดสไตล์ของ container */
+/* container */
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -47,20 +47,21 @@ body {
   padding: 20px;
   border-radius: 5px;
   background-color: purple;
-  color: #000000;
+  color: #ffffff;
   border-radius: 10px;
   background: transparent;
+  background: linear-gradient(rgba(238, 124, 30, 0.5), rgba(90, 59, 230, 0.5), rgba(255, 0, 0, 0.5));
   border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px) ;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* กำหนดสไตล์ของหัวข้อ h2 */
+/* สไตล์ของหัวข้อ h2 */
 h2 {
   text-align: center;
 }
 
-/* กำหนดสไตล์ของ input และ select */
+/* สไตล์ของ input และ select */
 input[type="text"],
 input[type="number"],
 select {
@@ -72,7 +73,7 @@ select {
   box-sizing: border-box;
 }
 
-/* กำหนดสไตล์ของปุ่ม button */
+/* สไตล์ของปุ่ม button */
 button {
   background-color: #4CAF50;
   color: white;
@@ -83,12 +84,12 @@ button {
   float: right;
 }
 
-/* กำหนดสไตล์ของปุ่ม button เมื่อโฮเวอร์ */
+/* สไตล์ของปุ่ม button เมื่อชี้เมาส์ค้างไว้ */
 button:hover {
   background-color: #45a049;
 }
 
-/* กำหนดสไตล์ของข้อความแจ้งเตือน */
+/* ข้อความแจ้งเตือน */
 .message {
   background-color: gray;
   color: white;
@@ -97,7 +98,7 @@ button:hover {
   display: none;
 }
 
-/* กำหนดสไตล์ของข้อความแจ้งเตือนเมื่อเป็นสำเร็จ */
+/* ความแจ้งเตือนเมื่อสำเร็จ */
 .message.success {
   background-color: green;
   display: block;
@@ -105,7 +106,7 @@ button:hover {
   text-align: center;
 }
 
-/* กำหนดสไตล์ของข้อความแจ้งเตือนเมื่อไม่สำเร็จ */
+/* ข้อความแจ้งเตือนเมื่อไม่สำเร็จ */
 .message.danger {
   background-color: red;
   display: block;
